@@ -1,0 +1,51 @@
+wap that will take multiple int sort multiple list sort the int and print in sorted order store the int in the vactor
+
+2..
+
+#include <iostream>
+#include <list>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    list<int> lst;
+
+    for (int i = 0; i < N; ++i) {
+        string command;
+        cin >> command;
+
+        if (command == "insert") {
+            int pos, val;ev
+            cin >> pos >> val;
+            list<int>::iterator it = lst.begin();
+            advance(it, pos);
+            lst.insert(it, val);
+        } else if (command == "print") {
+           for (list<int>::iterator it = lst.begin(); it != lst.end(); ++it) {
+    		cout << *it << " ";
+			}
+            cout << endl;
+        } else if (command == "remove") {
+            int val;
+            cin >> val;
+            lst.remove(val);
+        } else if (command == "append") {
+            int val;
+            cin >> val;
+            lst.push_back(val);
+        } else if (command == "sort") {
+            lst.sort();
+        } else if (command == "pop") {
+            lst.pop_back();
+        } else if (command == "reverse") {
+            lst.reverse();
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
